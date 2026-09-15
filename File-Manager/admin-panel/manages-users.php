@@ -49,12 +49,6 @@ exit;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-// if($_SESSION['role'] != 1){
-//     http_response_code(403);
-//     echo json_encode(["error" => "Only admins can perform this action"]);
-//     exit;
-// }
-
 $data = json_decode(file_get_contents("php://input"), true);
 $action = $data['action'] ?? null;
 
