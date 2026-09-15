@@ -2,12 +2,12 @@
 header('Content-Type: application/json');
 require '../database/database.php';
 
-// real app mein: agar session hi nahi hai to yahin rok do
-// if(!isset($_SESSION['user_id'])){
-//     http_response_code(401);
-//     echo json_encode(["error" => "Not logged in"]);
-//     exit;
-// }
+
+if(!isset($_SESSION['user_id'])){
+    http_response_code(401);
+    echo json_encode(["error" => "Not logged in"]);
+    exit;
+}
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
 
